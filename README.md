@@ -30,9 +30,8 @@ Improvement through reflection is going to be measured by:
 - Baseline (no reflection) Planner agent -> Researcher agent -> Writer agent
 - With reflection: Planner agent -> Researcher agent -> Writer agent -> Reflector agent -> Router agent (that controls whether to revise or not)
 
-```Structure:
+**Structure**
 ```
-
 project/
 │
 ├── agent.py      # State + LLM definitions (Used ChatOpenAI and OpenAI)
@@ -42,3 +41,4 @@ project/
 ├── main.py       # Program execution entry point
 ├── app.py        # Streamlit UI
 ├── eval.py       # Evaluation script   
+```
