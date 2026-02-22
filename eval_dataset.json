@@ -1,0 +1,22 @@
+[
+    {
+        "query": "Latest AstraZeneca AI trials",
+        "expected_keywords": [
+            "clinical",
+            "AI",
+            "trial",
+            "phase",
+            "research"
+        ]
+    },
+    {
+        "query": "Recent NVIDIA AI announcements",
+        "expected_keywords": [
+            "GPU",
+            "AI",
+            "announcement",
+            "launch",
+            "model"
+        ]
+    }
+]
