@@ -1,8 +1,8 @@
 This project is an end-to-end self correcting agent that can be used for various purposes.
 
-```markdown
+
 **Research Agent with Reflection Loop.**
-```
+
 
 ```markdown
 It will:
