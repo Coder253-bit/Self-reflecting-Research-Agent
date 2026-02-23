@@ -2,12 +2,16 @@ import streamlit as st
 from graph import app, app_without_reflection
 from langchain_core.messages import HumanMessage
 
-
+# Rate limiting using request count
+if "request_count" not in st.session_state:
+    st.session_state.request_count = 0
 
 st.set_page_config(page_title="AI Research Agent", layout="centered")
 
 st.title("🧠 AI Research Agent")
 st.markdown("Ask about latest current affairs and compare baseline vs reflection.")
+
+st.caption("Demo version. Usage limited.")
 
 query = st.text_input("Enter your query:")
 
@@ -21,7 +25,13 @@ if st.button("Run Agent"):
     if not query.strip():
         st.warning("Please enter a query.")
         st.stop()
+    
+    # Rate limit
+    if st.session_state.request_count >= 2:
+        st.warning("Demo limit reached.")
+        st.stop()
 
+    st.session_state.request_count += 1
     state = {
         "messages": [HumanMessage(content=query)],
         "human_feedback": None,
@@ -56,3 +66,11 @@ if st.button("Run Agent"):
 
             st.subheader("🔁 Total Revisions")
             st.write(result["revision_score"])
+
+
+
+        if st.session_state.request_count > 1:
+            st.warning("Demo limit reached.")
+            st.stop()
+
+        st.session_state.request_count += 1
