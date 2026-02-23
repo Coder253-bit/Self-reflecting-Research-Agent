@@ -23,7 +23,6 @@ This demonstrates:
 - Reflection pattern
 - Conditional routing
 - Evaluation thinking
-- Observability (LangSmith)
 ```
 
 Improvement through reflection is going to be measured by:
